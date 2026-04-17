@@ -136,7 +136,7 @@ if menu == "Interface Étudiant":
 # ====================== 2. INTERFACE PROFESSEUR ======================
 else:
     st.title("📊 Tableau de Bord")
-     st.title("📊 code_prof: admin")
+    st.title("📊 code_prof: admin")
     
     if "auth" not in st.session_state:
         st.session_state.auth = False
