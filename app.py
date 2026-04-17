@@ -141,7 +141,7 @@ else:
     if not st.session_state.get('authenticated', False):
         st.title("🔐 Accès Restreint")
         with st.container(border=True):
-            pwd_input = st.text_input("Code Administrateur", type="password")
+            pwd_input = st.text_input("Code Administrateur : admin", type="password")
             if st.button("DÉVERROUILLER"):
                 if check_password(pwd_input):
                     st.session_state.authenticated = True
