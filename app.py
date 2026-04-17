@@ -94,7 +94,7 @@ st.sidebar.info(f"📅 Session : {datetime.now().strftime('%d/%m/%Y')}")
 
 # ====================== 1. INTERFACE ÉTUDIANT ======================
 if menu == "Interface Étudiant":
-    st.title("📥 soumission des projets & Audit IA")
+    st.title("📥 Soumission Des Projets & Audit IA")
     
     secteur_choisi = st.selectbox("Domaine d'activité", list(SECTEURS_TECH.keys()))
     secteur_final = secteur_choisi
