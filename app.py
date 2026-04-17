@@ -96,7 +96,7 @@ st.sidebar.subheader("ROLL-INSIGHT v2.1")
 st.sidebar.markdown("---")
 menu = st.sidebar.radio("Navigation", ["Interface Étudiant (collecte)", "Interface Professeur (analyse & IA"])
 st.sidebar.info(f"📅 Session : {datetime.now().strftime('%d/%m/%Y')}")
-st.sidebar.info("🔑 Code Admin : admin")
+st.sidebar.info("🔑 Code prof : admin")
 
 # ====================== 1. INTERFACE ÉTUDIANT ======================
 if menu == "Interface Étudiant":
