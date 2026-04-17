@@ -94,7 +94,7 @@ st.sidebar.info(f"📅 Session : {datetime.now().strftime('%d/%m/%Y')}")
 
 # ====================== 1. INTERFACE ÉTUDIANT ======================
 if menu == "Interface Étudiant":
-    st.title("📥 COLLECTE LE TP DE CHAQUE ETUDIANT & Audit IA")
+    st.title("📥 soumission des projets & Audit IA")
     
     secteur_choisi = st.selectbox("Domaine d'activité", list(SECTEURS_TECH.keys()))
     secteur_final = secteur_choisi
@@ -141,7 +141,7 @@ else:
         st.session_state.auth = False
     
     if not st.session_state.auth:
-        pwd = st.sidebar.text_input("🔑 Code Professeur", type="password")
+        pwd = st.sidebar.text_input("🔑 Code Professeur:admin", type="password")
         if st.sidebar.button("Se connecter"):
             if check_prof_password(pwd):
                 st.session_state.auth = True
