@@ -89,8 +89,9 @@ def is_valid_email(email):
 st.sidebar.title("👨‍💻 INF 232 — EC2")
 st.sidebar.subheader("ROLL-INSIGHT v2.1")
 st.sidebar.markdown("---")
-menu = st.sidebar.radio("Navigation", ["Interface Étudiant(collecte)", "Interface Professeur(analyse)"])
+menu = st.sidebar.radio("Navigation", ["Interface Étudiant", "Interface Professeur"])
 st.sidebar.info(f"📅 Session : {datetime.now().strftime('%d/%m/%Y')}")
+
 # ====================== 1. INTERFACE ÉTUDIANT ======================
 if menu == "Interface Étudiant":
     st.title("📥 Soumission & Audit IA")
@@ -103,7 +104,7 @@ if menu == "Interface Étudiant":
 
     with st.form("audit_form", clear_on_submit=True):
         c1, c2 = st.columns(2)
-        nom = c1.text_input("Nom Complet", placeholder="Ex: nom_complet")
+        nom = c1.text_input("Nom Complet", placeholder="Ex: Jean Dupont")
         email = c1.text_input("Email Professionnel")
         lien = c2.text_input("Lien HTTPS du projet (GitHub/URL)")
         submit = st.form_submit_button("🚀 LANCER L'AUDIT IA", use_container_width=True)
