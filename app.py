@@ -141,7 +141,7 @@ else:
         st.session_state.auth = False
     
     if not st.session_state.auth:
-        pwd = st.sidebar.text_input("🔑 Code Professeur:admin", type="password")
+        pwd = st.sidebar.text_input("🔑 Code Professeur: admin", type="password")
         if st.sidebar.button("Se connecter"):
             if check_prof_password(pwd):
                 st.session_state.auth = True
