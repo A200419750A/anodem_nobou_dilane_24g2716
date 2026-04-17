@@ -15,7 +15,7 @@ import hashlib
 
 # ====================== CONFIGURATION ======================
 st.set_page_config(
-    page_title="ADN-ROLLIN-INSIGHT v2.1",
+    page_title="ADN-ROLL-INSIGHT v2.1",
     page_icon="💎",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -94,7 +94,7 @@ def is_valid_email(email):
 st.sidebar.title("👨‍💻 INF 232 — EC2")
 st.sidebar.subheader("ROLL-INSIGHT v2.1")
 st.sidebar.markdown("---")
-menu = st.sidebar.radio("Navigation", ["Interface Étudiant", "Interface Professeur"])
+menu = st.sidebar.radio("Navigation", ["Interface Étudiant (collecte)", "Interface Professeur (analyse et IA) mot de passe du prof: (Admin)"])
 st.sidebar.info(f"📅 Session : {datetime.now().strftime('%d/%m/%Y')}")
 
 # ====================== 1. INTERFACE ÉTUDIANT ======================
