@@ -8,7 +8,6 @@ from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 from sklearn.cluster import KMeans
-import hashlib
 
 # ====================== CONFIGURATION PAGE ======================
 st.set_page_config(
@@ -18,7 +17,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Style CSS Premium Cyber (Lisibilité maximale pour le Pr Rollin)
+# Style CSS Premium Cyber
 st.markdown("""
 <style>
     .main {background-color: #0a0a1f;}
@@ -80,8 +79,8 @@ SECTEURS_TECH = {
 }
 
 def check_password(pwd):
-    # Hash SHA-256 du mot de passe "admin"
-    return hashlib.sha256(pwd.encode()).hexdigest() == "8c6976e510415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
+    # Comparaison directe simple pour garantir l'accès
+    return pwd == "admin"
 
 # ====================== BARRE LATÉRALE (SIDEBAR) ======================
 with st.sidebar:
@@ -142,7 +141,7 @@ else:
     if not st.session_state.get('authenticated', False):
         st.title("🔐 Accès Restreint")
         with st.container(border=True):
-            pwd_input = st.text_input("Code Administrateur (admin)", type="password")
+            pwd_input = st.text_input("Code Administrateur", type="password")
             if st.button("DÉVERROUILLER"):
                 if check_password(pwd_input):
                     st.session_state.authenticated = True
@@ -157,7 +156,6 @@ else:
     if df.empty:
         st.info("⌛ En attente de soumissions...")
     else:
-        # Métriques Globales
         m1, m2, m3, m4 = st.columns(4)
         m1.metric("Projets", len(df))
         m2.metric("Moyenne", f"{df['note_predite'].mean():.2f}")
@@ -183,7 +181,6 @@ else:
             
             with cia1:
                 st.write("**Modèle de Régression Linéaire (OLS)**")
-                # Utilise statsmodels pour la trendline
                 fig_reg = px.scatter(df, x='complexite', y='note_predite', trendline="ols",
                                      title="Corrélation Complexité vs Note",
                                      trendline_color_override="#00d4ff",
