@@ -94,7 +94,7 @@ def is_valid_email(email):
 st.sidebar.title("👨‍💻 INF 232 — EC2")
 st.sidebar.subheader("ROLL-INSIGHT v2.1")
 st.sidebar.markdown("---")
-menu = st.sidebar.radio("Navigation", ["Interface Étudiant (collecte)", "Interface Professeur (analyse & IA & Graphique ) code du professeur temporaire: (Admin)"])
+menu = st.sidebar.radio("Navigation", ["Interface Étudiant (collecte)", "Interface Professeur (analyse & IA & Graphique )    code du professeur temporaire: (Admin)"])
 st.sidebar.info(f"📅 Session : {datetime.now().strftime('%d/%m/%Y')}")
 
 # ====================== 1. INTERFACE ÉTUDIANT ======================
