@@ -90,6 +90,7 @@ st.sidebar.title("👨‍💻 INF 232 — EC2")
 st.sidebar.subheader("ROLL-INSIGHT v2.1")
 st.sidebar.markdown("---")
 menu = st.sidebar.radio("Navigation", ["Interface Étudiant(collecte)", "Interface Professeur(analyse)"])
+st.title("📊 code_prof: admin")
 st.sidebar.info(f"📅 Session : {datetime.now().strftime('%d/%m/%Y')}")
 
 # ====================== 1. INTERFACE ÉTUDIANT ======================
@@ -136,7 +137,6 @@ if menu == "Interface Étudiant":
 # ====================== 2. INTERFACE PROFESSEUR ======================
 else:
     st.title("📊 Tableau de Bord")
-    st.title("📊 code_prof: admin")
     
     if "auth" not in st.session_state:
         st.session_state.auth = False
