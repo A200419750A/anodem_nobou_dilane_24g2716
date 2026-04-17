@@ -94,7 +94,7 @@ st.sidebar.info(f"📅 Session : {datetime.now().strftime('%d/%m/%Y')}")
 
 # ====================== 1. INTERFACE ÉTUDIANT ======================
 if menu == "Interface Étudiant":
-    st.title("📥 Soumission & Audit IA")
+    st.title("📥 COLLECTE LE TP DE CHAQUE ETUDIANT & Audit IA")
     
     secteur_choisi = st.selectbox("Domaine d'activité", list(SECTEURS_TECH.keys()))
     secteur_final = secteur_choisi
@@ -104,7 +104,7 @@ if menu == "Interface Étudiant":
 
     with st.form("audit_form", clear_on_submit=True):
         c1, c2 = st.columns(2)
-        nom = c1.text_input("Nom Complet", placeholder="Ex: Jean Dupont")
+        nom = c1.text_input("Nom Complet", placeholder="Ex: NOM")
         email = c1.text_input("Email Professionnel")
         lien = c2.text_input("Lien HTTPS du projet (GitHub/URL)")
         submit = st.form_submit_button("🚀 LANCER L'AUDIT IA", use_container_width=True)
