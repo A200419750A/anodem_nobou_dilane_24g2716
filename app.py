@@ -12,7 +12,7 @@ from sklearn.cluster import KMeans
 # ====================== CONFIGURATION PAGE ======================
 st.set_page_config(
     page_title="ADN-ROLL-INSIGHT v2.5",
-    page_icon="💎",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -87,7 +87,7 @@ with st.sidebar:
     st.image("https://cdn-icons-png.flaticon.com/512/2103/2103633.png", width=80)
     st.title("ADN-ROLL v2.5")
     st.markdown("---")
-    menu = st.radio("Navigation", ["🚀 Espace Étudiant", "👨‍🏫 Espace Professeur"])
+    menu = st.radio("Navigation", [" Espace Étudiant", " Espace Professeur"])
     st.markdown("---")
     if st.session_state.get('authenticated'):
         if st.sidebar.button("🔒 Déconnexion"):
@@ -96,8 +96,8 @@ with st.sidebar:
     st.info(f"📅 {datetime.now().strftime('%d/%m/%Y %H:%M')}")
 
 # ====================== 1. INTERFACE ÉTUDIANT ======================
-if menu == "🚀 Espace Étudiant":
-    st.title("🧪 Audit IA de Projet")
+if menu == " Espace Étudiant":
+    st.title(" Audit IA de Projet")
     st.write("Soumettez votre projet pour une analyse de performance immédiate.")
 
     col_form, col_info = st.columns([2, 1])
@@ -150,11 +150,11 @@ else:
                     st.error("Mot de passe incorrect.")
         st.stop()
 
-    st.title("📊 Dashboard de Pilotage IA")
+    st.title("Dashboard de Pilotage IA")
     df = load_data()
 
     if df.empty:
-        st.info("⌛ En attente de soumissions...")
+        st.info(" En attente de soumissions...")
     else:
         m1, m2, m3, m4 = st.columns(4)
         m1.metric("Projets", len(df))
